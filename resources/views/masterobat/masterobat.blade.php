@@ -1,4 +1,4 @@
-@extends('dashboard.master')
+@extends('templates.master')
 
 @section('title', 'Master Obat')
 

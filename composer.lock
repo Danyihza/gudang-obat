@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4842c22e789d247c4b660e69490545f",
+    "content-hash": "2a332802fe68e8b7374c04f7e93914fa",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1664,6 +1664,50 @@
                 }
             ],
             "time": "2021-11-21T11:48:40+00:00"
+        },
+        {
+            "name": "lintangtimur/ovoid",
+            "version": "v3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lintangtimur/ovoid.git",
+                "reference": "cf8197a8f7cab4c0dda7e865dcfae58c5e70248e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lintangtimur/ovoid/zipball/cf8197a8f7cab4c0dda7e865dcfae58c5e70248e",
+                "reference": "cf8197a8f7cab4c0dda7e865dcfae58c5e70248e",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7",
+                "symfony/var-dumper": "^4.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper/function.php"
+                ],
+                "psr-4": {
+                    "Stelin\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "lintangtimur",
+                    "email": "lintangtimur915@gmail.com"
+                }
+            ],
+            "description": "Un-Official OVOID API Wrapper",
+            "support": {
+                "issues": "https://github.com/lintangtimur/ovoid/issues",
+                "source": "https://github.com/lintangtimur/ovoid/tree/v3.2"
+            },
+            "time": "2021-10-29T15:57:19+00:00"
         },
         {
             "name": "monolog/monolog",

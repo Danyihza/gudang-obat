@@ -8,6 +8,8 @@ class MasterObatController extends Controller
 {
     public function view()
     {
-        return view('masterobat.masterobat');
+        $data['state'] = 'Master Obat';
+        return view('masterobat.masterobat', $data);
     }
+    
 }

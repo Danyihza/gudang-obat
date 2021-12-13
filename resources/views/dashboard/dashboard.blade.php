@@ -1,4 +1,4 @@
-@extends('dashboard.master')
+@extends('templates.master')
 
 @section('title', 'Dashboard Page')
 
@@ -68,14 +68,14 @@
                                         </div>
                                     </div>
                                     <div class="text-3xl font-medium leading-8 mt-6">152.040</div>
-                                    <div class="text-base text-gray-600 mt-1">Selisih</div>
+                                    <div class="text-base text-gray-600 mt-1">Obat Kedaluwarsa</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- END: General Report -->
-                <!-- BEGIN: Sales Report -->
+                {{-- <!-- BEGIN: Sales Report -->
                 <div class="col-span-12 lg:col-span-6 mt-8">
                     <div class="intro-y block sm:flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">
@@ -111,8 +111,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- END: Sales Report -->
-                <!-- BEGIN: Weekly Top Seller -->
+                <!-- END: Sales Report --> --}}
+                {{-- <!-- BEGIN: Weekly Top Seller -->
                 <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
                     <div class="intro-y flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">
@@ -144,8 +144,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- END: Weekly Top Seller -->
-                <!-- BEGIN: Sales Report -->
+                <!-- END: Weekly Top Seller --> --}}
+                {{-- <!-- BEGIN: Sales Report -->
                 <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
                     <div class="intro-y flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">
@@ -177,8 +177,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- END: Sales Report -->
-                <!-- BEGIN: Official Store -->
+                <!-- END: Sales Report --> --}}
+                {{-- <!-- BEGIN: Official Store -->
                 <div class="col-span-12 xl:col-span-8 mt-6">
                     <div class="intro-y block sm:flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">
@@ -194,8 +194,8 @@
                         <div class="report-maps mt-5 bg-gray-200 rounded-md" data-center="-6.2425342, 106.8626478" data-sources="/dist/json/location.json"></div>
                     </div>
                 </div>
-                <!-- END: Official Store -->
-                <!-- BEGIN: Weekly Best Sellers -->
+                <!-- END: Official Store --> --}}
+                {{-- <!-- BEGIN: Weekly Best Sellers -->
                 <div class="col-span-12 xl:col-span-4 mt-6">
                     <div class="intro-y flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">
@@ -254,8 +254,8 @@
                         <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">View More</a> 
                     </div>
                 </div>
-                <!-- END: Weekly Best Sellers -->
-                <!-- BEGIN: General Report -->
+                <!-- END: Weekly Best Sellers --> --}}
+                {{-- <!-- BEGIN: General Report -->
                 <div class="col-span-12 grid grid-cols-12 gap-6 mt-8">
                     <div class="col-span-12 sm:col-span-6 xxl:col-span-3 intro-y">
                         <div class="box p-5 zoom-in">
@@ -308,12 +308,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- END: General Report -->
+                <!-- END: General Report --> --}}
                 <!-- BEGIN: Weekly Top Products -->
                 <div class="col-span-12 mt-6">
                     <div class="intro-y block sm:flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">
-                            Weekly Top Products
+                            Stok Obat
                         </h2>
                         <div class="flex items-center sm:ml-auto mt-3 sm:mt-0">
                             <button class="btn box flex items-center text-gray-700 dark:text-gray-300"> <i data-feather="file-text" class="hidden sm:block w-4 h-4 mr-2"></i> Export to Excel </button>
@@ -639,7 +639,7 @@
                         </div>
                     </div>
                     <!-- END: Recent Activities -->
-                    <!-- BEGIN: Important Notes -->
+                    {{-- <!-- BEGIN: Important Notes -->
                     <div class="col-span-12 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 xxl:col-start-auto xxl:row-start-auto mt-3">
                         <div class="intro-x flex items-center h-10">
                             <h2 class="text-lg font-medium truncate mr-auto">
@@ -682,8 +682,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- END: Important Notes -->
-                    <!-- BEGIN: Schedules -->
+                    <!-- END: Important Notes --> --}}
+                    {{-- <!-- BEGIN: Schedules -->
                     <div class="col-span-12 md:col-span-6 xl:col-span-4 xxl:col-span-12 xl:col-start-1 xl:row-start-2 xxl:col-start-auto xxl:row-start-auto mt-3">
                         <div class="intro-x flex items-center h-10">
                             <h2 class="text-lg font-medium truncate mr-5">
@@ -774,7 +774,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- END: Schedules -->
+                    <!-- END: Schedules --> --}}
                 </div>
             </div>
         </div>
