@@ -20,6 +20,7 @@ class CreateMasterObatTable extends Migration
             $table->string('kode_satuan_kecil', 10);
             $table->string('kode_satuan_besar', 10);
             $table->string('kode_terapi_obat', 10);
+            $table->integer('stok');
             $table->timestamps();
         });
     }

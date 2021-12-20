@@ -2,20 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MasterObat;
 use Illuminate\Http\Request;
-use Stelin\OVOID;
+// use Stelin\OVOID;
 
 class DashboardController extends Controller
 {
     public function dashboard()
     {
         $data['state'] = 'Dashboard';
+        $data['obat'] = MasterObat::all();
         return view('dashboard.dashboard', $data);
     }
+    
 
     // public function ovoConnect()
     // {
-    //     $ovo = new OVOID(null, "id_device");
+    //     $ovo = new OVOID(null, "contoh-device-id");
     //     echo $ovo->OTP("+6285155248865")->getData()->getOtp()->getOtpRefId();
     //     // echo $ovo->OTPValidation("+6285155248865", "6766e4c5-506c-4636-a581-102da6c4991d", "32193ac16315836f7e309775019a041601d4b32ff64fbbaaa9728392b85ee247")->getData()->getOtp()->getOtpToken();
     //     // echo $ovo->OTPValidation("+6285155248865", "otp-ref-id", "otp")->getData()->getOtp()->getOtpToken();

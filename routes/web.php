@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MasterObatController;
 use App\Http\Controllers\ObatMasukController;
 use Illuminate\Support\Facades\Hash;
@@ -30,6 +31,8 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
 Route::group([], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboardView');
     Route::get('/obatmasuk', [ObatMasukController::class, 'view'])->name('obatmasukView');
+    Route::get('/obatkeluar', [ObatKeluarController::class, 'view'])->name('obatkeluarView');
+    Route::get('/laporan', [LaporanController::class, 'view'])->name('laporanView');
     Route::get('/masterobat', [MasterObatController::class, 'view'])->name('masterobatView');
 });
 
