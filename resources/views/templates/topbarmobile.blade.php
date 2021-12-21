@@ -2,7 +2,8 @@
 <div class="mobile-menu md:hidden">
     <div class="mobile-menu-bar">
         <a href="" class="flex mr-auto">
-            <img alt="Rubick Tailwind HTML Admin Template" class="w-6" src="{{ asset('/assets/dist/') }}/images/logo.svg">
+            <img alt="" class="w-6" src="{{ asset('/assets/dist/') }}/images/Icons/pill.png">
+            <span class="text-white text-lg ml-3"> Gudang<span class="font-medium">Obat</span> </span>
         </a>
         <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
     </div>
@@ -20,21 +21,21 @@
             </a>
         </li>
         <li>
-            <a href="#" class="menu menu--active">
+            <a href="{{ route('obatkeluarView') }}" class="menu">
                 <div class="menu__icon"> <i data-feather="corner-right-up"></i> </div>
-                <div class="menu__title"> Obat Keluar <i data-feather="chevron-up" class="menu__sub-icon transform rotate-180"></i> </div>
+                <div class="menu__title"> Obat Keluar </div>
             </a>
-            <ul class="menu__sub">
+            <!-- <ul class="menu__sub">
                 <li>
                     <a href="index.html" class="menu">
                         <div class="menu__icon"> <i data-feather="activity"></i> </div>
                         <div class="menu__title"> Overview 1 </div>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
         </li>
         <li>
-            <a href="" class="menu">
+            <a href="{{ route('laporanView') }}" class="menu">
                 <div class="menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="menu__title"> Laporan </div>
             </a>

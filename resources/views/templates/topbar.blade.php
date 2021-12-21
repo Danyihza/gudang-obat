@@ -14,21 +14,22 @@
             </a>
         </li>
         <li>
-            <a href="#" class="top-menu">
+            <a href="{{ route('obatkeluarView') }}" class="top-menu {{ $state == 'Obat Keluar' ? 'top-menu--active' : '' }}">
                 <div class="top-menu__icon"> <i data-feather="corner-right-up"></i> </div>
-                <div class="top-menu__title"> Obat Keluar <i data-feather="chevron-down" class="top-menu__sub-icon"></i> </div>
+                <div class="top-menu__title"> Obat Keluar </div>
+                <!-- <i data-feather="chevron-down" class="top-menu__sub-icon"></i> -->
             </a>
-            <ul class="">
+            <!-- <ul class="">
                 <li>
                     <a href="#" class="top-menu">
                         <div class="top-menu__icon"> <i data-feather="activity"></i> </div>
                         <div class="top-menu__title"> Users </div>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
         </li>
         <li>
-            <a href="#" class="top-menu">
+            <a href="{{ route('laporanView') }}" class="top-menu {{ $state == 'Laporan' ? 'top-menu--active' : '' }}">
                 <div class="top-menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="top-menu__title"> Laporan </div>
             </a>
