@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MasterObatController;
 use App\Http\Controllers\ObatMasukController;
+use App\Http\Controllers\ObatKeluarController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
