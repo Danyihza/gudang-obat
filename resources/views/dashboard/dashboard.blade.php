@@ -13,7 +13,8 @@
                         <h2 class="text-lg font-medium truncate mr-5">
                             Laporan Umum
                         </h2>
-                        <a href="" class="ml-auto flex items-center text-theme-1 dark:text-theme-10"> <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data </a>
+                        <a href="" class="ml-auto flex items-center text-theme-1 dark:text-theme-10"> <i
+                                data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data </a>
                     </div>
                     <div class="grid grid-cols-12 gap-6 mt-5">
                         <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
@@ -22,7 +23,9 @@
                                     <div class="flex">
                                         <i data-feather="shopping-cart" class="report-box__icon text-theme-10"></i>
                                         <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month"> 33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer"
+                                                title="33% Higher than last month"> 33% <i data-feather="chevron-up"
+                                                    class="w-4 h-4 ml-0.5"></i> </div>
                                         </div>
                                     </div>
                                     <div class="text-3xl font-medium leading-8 mt-6">4.710</div>
@@ -36,7 +39,9 @@
                                     <div class="flex">
                                         <i data-feather="credit-card" class="report-box__icon text-theme-11"></i>
                                         <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="2% Lower than last month"> 2% <i data-feather="chevron-down" class="w-4 h-4 ml-0.5"></i> </div>
+                                            <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer"
+                                                title="2% Lower than last month"> 2% <i data-feather="chevron-down"
+                                                    class="w-4 h-4 ml-0.5"></i> </div>
                                         </div>
                                     </div>
                                     <div class="text-3xl font-medium leading-8 mt-6">3.721</div>
@@ -50,7 +55,9 @@
                                     <div class="flex">
                                         <i data-feather="monitor" class="report-box__icon text-theme-12"></i>
                                         <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="12% Higher than last month"> 12% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer"
+                                                title="12% Higher than last month"> 12% <i data-feather="chevron-up"
+                                                    class="w-4 h-4 ml-0.5"></i> </div>
                                         </div>
                                     </div>
                                     <div class="text-3xl font-medium leading-8 mt-6">2.149</div>
@@ -64,7 +71,9 @@
                                     <div class="flex">
                                         <i data-feather="user" class="report-box__icon text-theme-9"></i>
                                         <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Higher than last month"> 22% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer"
+                                                title="22% Higher than last month"> 22% <i data-feather="chevron-up"
+                                                    class="w-4 h-4 ml-0.5"></i> </div>
                                         </div>
                                     </div>
                                     <div class="text-3xl font-medium leading-8 mt-6">152.040</div>
@@ -251,7 +260,9 @@
             <div class="py-1 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium">137 Sales</div>
         </div>
     </div>
-    <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">View More</a>
+    <a href=""
+        class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">View
+        More</a>
 </div>
 </div>
 <!-- END: Weekly Best Sellers --> --}}
@@ -316,8 +327,10 @@
             Stok Obat
         </h2>
         <div class="flex items-center sm:ml-auto mt-3 sm:mt-0">
-            <button class="btn box flex items-center text-gray-700 dark:text-gray-300"> <i data-feather="file-text" class="hidden sm:block w-4 h-4 mr-2"></i> Export to Excel </button>
-            <button class="ml-3 btn box flex items-center text-gray-700 dark:text-gray-300"> <i data-feather="file-text" class="hidden sm:block w-4 h-4 mr-2"></i> Export to PDF </button>
+            <button class="btn box flex items-center text-gray-700 dark:text-gray-300"> <i data-feather="file-text"
+                    class="hidden sm:block w-4 h-4 mr-2"></i> Export to Excel </button>
+            <button class="ml-3 btn box flex items-center text-gray-700 dark:text-gray-300"> <i data-feather="file-text"
+                    class="hidden sm:block w-4 h-4 mr-2"></i> Export to PDF </button>
         </div>
     </div>
     <div class="intro-y overflow-auto lg:overflow-visible mt-8 sm:mt-0">
@@ -336,17 +349,6 @@
                 <tr class="intro-x">
                     <td class="w-40">
                         <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
-                        {{-- <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ asset('assets') }}/dist/images/preview-11.jpg" title="Uploaded at 13 November 2021">
-    </div>
-    <div class="w-10 h-10 image-fit zoom-in -ml-5">
-        <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ asset('assets') }}/dist/images/preview-6.jpg" title="Uploaded at 18 June 2022">
-    </div>
-    <div class="w-10 h-10 image-fit zoom-in -ml-5">
-        <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ asset('assets') }}/dist/images/preview-6.jpg" title="Uploaded at 21 November 2021">
-    </div>
-</div> --}}
 </td>
 <td>
     <a href="" class="font-medium whitespace-nowrap">{{ $data->nama_obat }}</a>
@@ -359,7 +361,8 @@
 <td class="table-report__action w-56">
     <div class="flex justify-center items-center">
         <a class="flex items-center mr-3" href=""> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Ubah </a>
-        <a class="flex items-center text-theme-6" href=""> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Hapus </a>
+        <a class="flex items-center text-theme-6" href=""> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Hapus
+        </a>
     </div>
 </td>
 </tr>
@@ -436,7 +439,8 @@
                     <div class="intro-x">
                         <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
                             <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('assets') }}/dist/images/profile-3.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template"
+                                    src="{{ asset('assets') }}/dist/images/profile-3.jpg">
                             </div>
                             <div class="ml-4 mr-auto">
                                 <div class="font-medium">Denzel Washington</div>
@@ -448,7 +452,8 @@
                     <div class="intro-x">
                         <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
                             <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('assets') }}/dist/images/profile-11.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template"
+                                    src="{{ asset('assets') }}/dist/images/profile-11.jpg">
                             </div>
                             <div class="ml-4 mr-auto">
                                 <div class="font-medium">Angelina Jolie</div>
@@ -460,7 +465,8 @@
                     <div class="intro-x">
                         <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
                             <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('assets') }}/dist/images/profile-11.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template"
+                                    src="{{ asset('assets') }}/dist/images/profile-11.jpg">
                             </div>
                             <div class="ml-4 mr-auto">
                                 <div class="font-medium">Russell Crowe</div>
@@ -469,7 +475,9 @@
                             <div class="text-theme-6">-$72</div>
                         </div>
                     </div>
-                    <a href="" class="intro-x w-full block text-center rounded-md py-3 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">View More</a>
+                    <a href=""
+                        class="intro-x w-full block text-center rounded-md py-3 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">View
+                        More</a>
                 </div>
             </div>
             <!-- END: Transactions -->
@@ -485,7 +493,8 @@
                     <div class="intro-x relative flex items-center mb-3">
                         <div class="report-timeline__image">
                             <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('assets') }}/dist/images/profile-6.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template"
+                                    src="{{ asset('assets') }}/dist/images/profile-6.jpg">
                             </div>
                         </div>
                         <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
@@ -511,13 +520,19 @@
                                 <div class="mt-1">Added 3 new photos</div>
                                 <div class="flex mt-2">
                                     <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in" title="Samsung Q90 QLED TV">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="{{ asset('assets') }}/dist/images/preview-4.jpg">
+                                        <img alt="Rubick Tailwind HTML Admin Template"
+                                            class="rounded-md border border-white"
+                                            src="{{ asset('assets') }}/dist/images/preview-4.jpg">
                                     </div>
                                     <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in" title="Nike Air Max 270">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="{{ asset('assets') }}/dist/images/preview-8.jpg">
+                                        <img alt="Rubick Tailwind HTML Admin Template"
+                                            class="rounded-md border border-white"
+                                            src="{{ asset('assets') }}/dist/images/preview-8.jpg">
                                     </div>
                                     <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in" title="Dell XPS 13">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="{{ asset('assets') }}/dist/images/preview-12.jpg">
+                                        <img alt="Rubick Tailwind HTML Admin Template"
+                                            class="rounded-md border border-white"
+                                            src="{{ asset('assets') }}/dist/images/preview-12.jpg">
                                     </div>
                                 </div>
                             </div>
@@ -527,7 +542,8 @@
                     <div class="intro-x relative flex items-center mb-3">
                         <div class="report-timeline__image">
                             <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('assets') }}/dist/images/profile-14.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template"
+                                    src="{{ asset('assets') }}/dist/images/profile-14.jpg">
                             </div>
                         </div>
                         <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
@@ -535,13 +551,15 @@
                                 <div class="font-medium">Al Pacino</div>
                                 <div class="text-xs text-gray-500 ml-auto">07:00 PM</div>
                             </div>
-                            <div class="text-gray-600 mt-1">Has changed <a class="text-theme-1 dark:text-theme-10" href="">Samsung Q90 QLED TV</a> price and description</div>
+                            <div class="text-gray-600 mt-1">Has changed <a class="text-theme-1 dark:text-theme-10"
+                                    href="">Samsung Q90 QLED TV</a> price and description</div>
                         </div>
                     </div>
                     <div class="intro-x relative flex items-center mb-3">
                         <div class="report-timeline__image">
                             <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('assets') }}/dist/images/profile-11.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template"
+                                    src="{{ asset('assets') }}/dist/images/profile-11.jpg">
                             </div>
                         </div>
                         <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
@@ -549,7 +567,8 @@
                                 <div class="font-medium">Tom Cruise</div>
                                 <div class="text-xs text-gray-500 ml-auto">07:00 PM</div>
                             </div>
-                            <div class="text-gray-600 mt-1">Has changed <a class="text-theme-1 dark:text-theme-10" href="">Oppo Find X2 Pro</a> description</div>
+                            <div class="text-gray-600 mt-1">Has changed <a class="text-theme-1 dark:text-theme-10"
+                                    href="">Oppo Find X2 Pro</a> description</div>
                         </div>
                     </div>
                 </div>

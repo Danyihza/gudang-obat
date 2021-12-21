@@ -25,13 +25,34 @@ class DatabaseSeeder extends Seeder
             'kode_terapi_obat' => 'A01',
             'stok' => 10
         ]);
+        
+        MasterObat::create([
+            'kode_obat' => 'A02',
+            'nama_obat' => 'Acyclovir',
+            'kode_gol_obat' => 'B',
+            'kode_satuan_kecil' => 'TAB',
+            'kode_satuan_besar' => 'TAB',
+            'kode_terapi_obat' => 'A02',
+            'stok' => 150
+        ]);
+
+        MasterObat::create([
+            'kode_obat' => 'A03',
+            'nama_obat' => 'Amoxicilin',
+            'kode_gol_obat' => 'C',
+            'kode_satuan_kecil' => 'SYR',
+            'kode_satuan_besar' => 'SYR',
+            'kode_terapi_obat' => 'A03',
+            'stok' => 1000
+        ]);
 
         TransaksiObat::create([
             'kode_transaksi' => 'TRS-001',
             'terima_dari' => 'RS. Dr. A.S.M.M.S',
             'nama_pengirim' => 'Dr. A.S.M.M.S',
             'kirim_ke' => 'RS. Dr. A.S.M.M.S',
-            'catatan' => 'Catatan'
+            'catatan' => 'Catatan',
+            'tanggal' => date('Y-m-d')
         ]);
 
         DetailTransaksiObat::create([

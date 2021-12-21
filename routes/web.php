@@ -32,6 +32,8 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
 Route::group([], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboardView');
     Route::get('/obatmasuk', [ObatMasukController::class, 'view'])->name('obatmasukView');
+    Route::post('/obatmasuk/addtocart', [ObatMasukController::class, 'addToCart'])->name('addToCart');
+    Route::get('/obatmasuk/emptyCart', [ObatMasukController::class, 'emptyCart'])->name('emptyCart');
     Route::get('/obatkeluar', [ObatKeluarController::class, 'view'])->name('obatkeluarView');
     Route::get('/laporan', [LaporanController::class, 'view'])->name('laporanView');
     Route::get('/masterobat', [MasterObatController::class, 'view'])->name('masterobatView');
