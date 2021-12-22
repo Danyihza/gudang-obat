@@ -71,7 +71,7 @@
                                 <select name="kode_obat" data-placeholder="Cari Obat" class="tom-select w-full">
                                     <option value="" disabled selected></option>
                                     @foreach($obat as $data)
-                                        <option value="{{ $data->kode_obat }}">{{ $data->nama_obat }} => Stok : {{ $data->stok }}</option>
+                                        <option value="{{ $data->kode_obat }}">{{ $data->nama_obat }} => Stok : {{ $data->stok->where('id_user', session('user')['id_user'])->first()->stok ?? 0 }}</option>
                                     @endforeach
                                 </select> 
                             </div>

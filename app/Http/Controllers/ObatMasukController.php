@@ -11,7 +11,7 @@ class ObatMasukController extends Controller
     {
         // dd(session('cart')[0]);
         $data['state'] = 'Obat Masuk';
-        $data['obat'] = MasterObat::orderBy('nama_obat', 'ASC')->get();
+        $data['obat'] = MasterObat::orderBy('nama_obat', 'ASC')->with('stok')->get();
         return view('obatmasuk.obatmasuk', $data);
     }
 
@@ -41,6 +41,6 @@ class ObatMasukController extends Controller
     public function emptyCart()
     {
         session()->forget('cart');
-        return redirect()->back();;
+        return redirect()->back();
     }
 }

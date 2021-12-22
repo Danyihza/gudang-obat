@@ -32,4 +32,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function fkStok()
+    {
+        return $this->hasMany(FkStok::class, 'id_user', 'id_user');
+    }
 }

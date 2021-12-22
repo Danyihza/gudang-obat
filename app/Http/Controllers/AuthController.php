@@ -23,10 +23,16 @@ class AuthController extends Controller
             $request->session()->put('user', $user);
             $user->last_login = date('Y-m-d H:i:s');
             $user->save();
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboardView');
         } else {
             return redirect()->route('auth.loginView')->with('error', 'Invalid username or password');
         }
 
+    }
+
+    public function signOut(Request $request)
+    {
+        $request->session()->forget('user');
+        return redirect()->route('auth.loginView');
     }
 }

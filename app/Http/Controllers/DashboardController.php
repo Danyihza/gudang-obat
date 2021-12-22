@@ -3,18 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\MasterObat;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+
 // use Stelin\OVOID;
 
 class DashboardController extends Controller
 {
+
+    private $http;
+
+    public function __construct()
+    {
+        $this->http = new Client();
+    }
+
     public function dashboard()
     {
         $data['state'] = 'Dashboard';
         $data['obat'] = MasterObat::all();
         return view('dashboard.dashboard', $data);
     }
-    
+
 
     // public function ovoConnect()
     // {
@@ -27,4 +38,58 @@ class DashboardController extends Controller
     //     // $ovo = new OVOID($authToken, "id_device");
     //     // dd($ovo->balanceModel());
     // }
+
+    public function ovoConnect(Request $request)
+    {
+        $path = $request->path;
+        // $number = $this->input->post('number');
+
+        $clientId = 'MCH-0620-1639978105427';
+        $requestId = gen_uuid();
+        $requestDate = date('Y-m-d\TH:i:s\Z');
+        $targetPath = $path;
+        $secretKey = 'SK-F4TeCikC1N4PD8Mlw1yx';
+        $requestBody = [
+            'customer' => [
+                'id' => 'CUSTOMER_OVOxDOKU',
+                'name' => 'TESTINGQA',
+                'phone' => '6285155248865',
+                'email' => 'testing@gmail.com',
+                'additional_info' => 'None'
+            ],
+            'ovo_account' => [
+                'account_mobile_phone' => '6285155248865',
+                'success_registration_url' => 'http://localhost/mediaarraihan',
+                'failed_registration_url' => 'http://localhost/mediaarraihan',
+            ],
+        ];
+
+        $digestValue = base64_encode(hash('sha256', json_encode($requestBody), true));
+
+        $componentSignature = "Client-Id:" . $clientId . "\n" .
+            "Request-Id:" . $requestId . "\n" .
+            "Request-Timestamp:" . $requestDate . "\n" .
+            "Request-Target:" . $targetPath . "\n" .
+            "Digest:" . $digestValue;
+
+        $signature = base64_encode(hash_hmac('sha256', $componentSignature, $secretKey, true));
+
+        $headerSignature = "Client-Id:" . $clientId . "\n" .
+            "Request-Id:" . $requestId . "\n" .
+            "Request-Timestamp:" . $requestDate . "\n" .
+            // Prepend encoded result with algorithm info HMACSHA256=
+            "Signature:" . "HMACSHA256=" . $signature;
+
+        // var_dump($requestId);die;
+
+        $response = Http::withHeaders([
+            'Client-Id' => $clientId,
+            'Request-Id' => $requestId,
+            'Request-Timestamp' => $requestDate,
+            'Signature' => "HMACSHA256=" . $signature,
+            'Content-Type' => 'application/json',
+        ])->post('https://api-sandbox.doku.com' . $path, $requestBody);
+
+        return $response;
+    }
 }

@@ -27,9 +27,10 @@ Route::get('/', function () {
 Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::get('/login', [AuthController::class, 'loginView'])->name('loginView');
     Route::post('/signin', [AuthController::class, 'signIn'])->name('signIn');
+    Route::get('/signOut', [AuthController::class, 'signOut'])->name('signOut');
 });
 
-Route::group([], function () {
+Route::group(['middleware' => 'isLoggedin'], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboardView');
     Route::get('/obatmasuk', [ObatMasukController::class, 'view'])->name('obatmasukView');
     Route::post('/obatmasuk/addtocart', [ObatMasukController::class, 'addToCart'])->name('addToCart');
@@ -40,7 +41,7 @@ Route::group([], function () {
 });
 
 Route::get('/genPass', function () {
-    return Hash::make('123456');
+    return Hash::make('admin');
 });
 
-// Route::get('/testovo', [DashboardController::class, 'ovoConnect']);
+// Route::post('/testovo', [DashboardController::class, 'ovoConnect']);

@@ -3,9 +3,12 @@
 namespace Database\Seeders;
 
 use App\Models\DetailTransaksiObat;
+use App\Models\FkStok;
 use App\Models\MasterObat;
 use App\Models\TransaksiObat;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +19,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        // User::create([
+        //     'id_user' => gen_uuid(),
+        //     'name' => 'Admin',
+        //     'username' => 'admin',
+        //     'password' => Hash::make('admin'),
+        //     'last_login' => now(),
+        // ]);
+        $id1 = gen_uuid();
+        $id2 = gen_uuid();
+        User::create([
+            'id_user' => $id1,
+            'name' => 'Puskesmas Tlanakan',
+            'username' => 'tlanakan',
+            'password' => Hash::make('tlanakan'),
+            'last_login' => now(),
+        ]);
+
+        User::create([
+            'id_user' => $id2,
+            'name' => 'Puskesmas Galis',
+            'username' => 'galis',
+            'password' => Hash::make('galis'),
+            'last_login' => now(),
+        ]);
+
         MasterObat::create([
             'kode_obat' => 'A01',
             'nama_obat' => 'Paracetamol',
@@ -23,7 +52,6 @@ class DatabaseSeeder extends Seeder
             'kode_satuan_kecil' => 'KG',
             'kode_satuan_besar' => 'KG',
             'kode_terapi_obat' => 'A01',
-            'stok' => 10
         ]);
         
         MasterObat::create([
@@ -33,7 +61,6 @@ class DatabaseSeeder extends Seeder
             'kode_satuan_kecil' => 'TAB',
             'kode_satuan_besar' => 'TAB',
             'kode_terapi_obat' => 'A02',
-            'stok' => 150
         ]);
 
         MasterObat::create([
@@ -43,7 +70,30 @@ class DatabaseSeeder extends Seeder
             'kode_satuan_kecil' => 'SYR',
             'kode_satuan_besar' => 'SYR',
             'kode_terapi_obat' => 'A03',
-            'stok' => 1000
+        ]);
+
+        FkStok::create([
+            'kode_obat' => 'A01',
+            'id_user' => $id1,
+            'stok' => '100',
+        ]);
+
+        FkStok::create([
+            'kode_obat' => 'A02',
+            'id_user' => $id1,
+            'stok' => '10',
+        ]);
+        
+        FkStok::create([
+            'kode_obat' => 'A03',
+            'id_user' => $id1,
+            'stok' => '50',
+        ]);
+
+        FkStok::create([
+            'kode_obat' => 'A02',
+            'id_user' => $id2,
+            'stok' => '50',
         ]);
 
         TransaksiObat::create([
