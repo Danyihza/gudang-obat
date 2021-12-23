@@ -35,9 +35,14 @@ Route::group(['middleware' => 'isLoggedin'], function () {
     Route::get('/obatmasuk', [ObatMasukController::class, 'view'])->name('obatmasukView');
     Route::post('/obatmasuk/addtocart', [ObatMasukController::class, 'addToCart'])->name('addToCart');
     Route::get('/obatmasuk/emptyCart', [ObatMasukController::class, 'emptyCart'])->name('emptyCart');
+    Route::get('/obatmasuk/deleteSingleDataInCart', [ObatMasukController::class, 'deleteSingleDataInCart'])->name('deleteSingleDataInCart');
     Route::get('/obatkeluar', [ObatKeluarController::class, 'view'])->name('obatkeluarView');
     Route::get('/laporan', [LaporanController::class, 'view'])->name('laporanView');
     Route::get('/masterobat', [MasterObatController::class, 'view'])->name('masterobatView');
+});
+
+Route::group(['as' => 'api.'], function () {
+    Route::post('/obatmasuk/storeData', [ObatMasukController::class, 'storeData'])->name('obatMasukStoreData');
 });
 
 Route::get('/genPass', function () {

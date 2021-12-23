@@ -145,6 +145,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('/assets/dist/') }}/js/app.js"></script>
     <!-- END: JS Assets-->
+    @yield('js')
 </body>
 
 </html>

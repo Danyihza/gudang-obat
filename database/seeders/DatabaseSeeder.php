@@ -101,6 +101,7 @@ class DatabaseSeeder extends Seeder
             'terima_dari' => 'RS. Dr. A.S.M.M.S',
             'nama_pengirim' => 'Dr. A.S.M.M.S',
             'kirim_ke' => 'RS. Dr. A.S.M.M.S',
+            'nama_penerima' => 'Dr. A.S.M.M.S',
             'catatan' => 'Catatan',
             'tanggal' => date('Y-m-d')
         ]);

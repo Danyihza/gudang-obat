@@ -18,6 +18,7 @@ class CreateTransaksiObatTable extends Migration
             $table->string('terima_dari', 100);
             $table->string('nama_pengirim', 100);
             $table->string('kirim_ke', 100);
+            $table->string('nama_penerima', 100);
             $table->text('catatan');
             $table->date('tanggal');
             $table->timestamps();

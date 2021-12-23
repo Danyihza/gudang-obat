@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ObatMasukController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::group(['as' => 'api.'], function () {
+//     Route::post('/obatmasuk/storeData', [ObatMasukController::class, 'storeData'])->name('obatMasukStoreData');
+// });
 
 // Route::post('/testovo', [DashboardController::class, 'ovoConnect']);
 

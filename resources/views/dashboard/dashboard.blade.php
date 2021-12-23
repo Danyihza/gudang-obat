@@ -354,7 +354,7 @@
     <a href="" class="font-medium whitespace-nowrap">{{ $data->nama_obat }}</a>
     <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">{{$data->kode_satuan_kecil}}</div>
 </td>
-<td class="text-center">{{ $data->stok }}</td>
+<td class="text-center">{{ $data->stok->where('id_user', session('user')['id_user'])->first()->stok ?? 0 }}</td>
 <!-- <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Berlaku </div>
                     </td> -->

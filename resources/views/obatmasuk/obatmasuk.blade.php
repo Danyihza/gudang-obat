@@ -19,33 +19,33 @@
             <div class="intro-y box p-5">
                 <div>
                     <label for="crud-form-1" class="form-label">Kode Penerimaan</label>
-                    <input id="crud-form-1" name="kode_penerimaan" value="{{ old('kode_penerimaan') }}" type="text" class="form-control w-full" placeholder="Masukkan Kode Penerimaan">
+                    <input name="kode_penerimaan" id="kode_penerimaan" value="{{ old('kode_penerimaan') }}" type="text" class="form-control w-full" placeholder="Masukkan Kode Penerimaan">
                 </div>
                 <div class="mt-3">
                     <label class="form-label">Tanggal</label>
-                    <input class="datepicker form-control w-full" name="tanggal" value="{{ old('') }}" data-single-mode="true" required="">
+                    <input class="datepicker form-control w-full" name="tanggal" id="tanggal" value="{{ old('tanggal') }}" data-single-mode="true" required="">
                 </div>
                 <div class="mt-3">
                     <label for="crud-form-1" class="form-label">Terima Dari</label>
-                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Masukkan Terima Dari">
+                    <input type="text" class="form-control w-full" name="terima_dari" id="terima_dari" value="{{ old('terima_dari') }}" placeholder="Masukkan Terima Dari">
                 </div>
                 <div class="mt-3">
                     <label for="crud-form-1" class="form-label">Nama Pengirim</label>
-                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Masukkan Nama Pengirim">
+                    <input type="text" class="form-control w-full" name="nama_pengirim" id="nama_pengirim" value="{{ old('nama_pengirim') }}" placeholder="Masukkan Nama Pengirim">
                 </div>
                 <div class="mt-3">
                     <label for="crud-form-1" class="form-label">Kirim Ke</label>
-                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Masukkan Kirim Ke">
+                    <input type="text" class="form-control w-full" name="kirim_ke" id="kirim_ke" value="{{ old('kirim_ke') }}" placeholder="Masukkan Kirim Ke">
                 </div>
                 <div class="mt-3">
                     <label for="crud-form-1" class="form-label">Nama Penerima</label>
-                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Masukkan Nama Penerima">
+                    <input type="text" class="form-control w-full" name="nama_penerima" id="nama_penerima" value="{{ old('nama_penerima') }}" placeholder="Masukkan Nama Penerima">
                 </div>
                 <div class="mt-3">
                     <label for="validation-form-6" class="form-label w-full flex flex-col sm:flex-row">
                         Catatan
                     </label>
-                    <textarea id="validation-form-6" class="form-control" name="comment" placeholder="" minlength="10"></textarea>
+                    <textarea class="form-control" name="catatan" id="catatan" placeholder="">{{ old('catatan') }}"</textarea>
                 </div>
                 <!-- <div class="text-right mt-5">
                     <button type="button" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
@@ -78,11 +78,11 @@
                     </div>
                     <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Nomor Faktur</label>
-                        <input id="crud-form-1" name="no_faktur" type="text" class="form-control w-full" placeholder="Masukkan Nomor Faktur">
+                        <input name="no_faktur" type="text" class="form-control w-full" placeholder="Masukkan Nomor Faktur">
                     </div>
                     <div class="mt-3">
                         <label for="crud-form-1" class="form-label">No. Batch</label>
-                        <input id="crud-form-1" name="no_batch" type="text" class="form-control w-full" placeholder="Masukkan No Batch">
+                        <input name="no_batch" type="text" class="form-control w-full" placeholder="Masukkan No Batch">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Kedaluwarsa</label>
@@ -90,11 +90,11 @@
                     </div>
                     <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Jumlah</label>
-                        <input id="crud-form-1" name="jumlah" type="text" class="form-control w-full" placeholder="Masukkan Jumlah">
+                        <input name="jumlah" type="text" class="form-control w-full" placeholder="Masukkan Jumlah">
                     </div>
                     <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Harga</label>
-                        <input id="crud-form-1" name="harga" type="text" class="form-control w-full" placeholder="Masukkan Harga">
+                        <input name="harga" type="text" class="form-control w-full" placeholder="Masukkan Harga">
                     </div>
                     <div class="text-right mt-5">
                         <button type="reset" class="btn btn-outline-secondary w-24 mr-1">Batal</button>
@@ -109,9 +109,15 @@
         <div class="grid grid-cols-12 gap-6 mt-5">
             <div class="intro-y col-span-12 ">
                 <div class="intro-y box p-5">
-                    <h2 class="text-lg font-medium mr-auto">
-                        List Obat Masuk
-                    </h2>
+                    <div class="flex justify-start">
+                        <h2 class="text-lg font-medium mr-auto">
+                            List Obat Masuk
+                        </h2>
+                        <p>
+                            Count Obat : <b>{{ count(session('cart')) }}</b>
+                        </p>
+                        
+                    </div>
                     <table id="cart_obat" class="table table-report sm:mt-2">
                         <thead>
                             <tr>
@@ -155,7 +161,7 @@
                                 </td>
                                 <td class="table-report__action w-56">
                                     <div class="flex justify-center items-center">
-                                        <a class="flex items-center text-theme-6" href=""> 
+                                        <a class="flex items-center text-theme-6" href="{{ route('deleteSingleDataInCart') }}?id_cart={{ $data['id_cart'] }}"> 
                                             <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Hapus
                                         </a>
                                     </div>
@@ -166,11 +172,54 @@
                     </table>
                     <div class="text-right mt-5">
                         <a href="{{ route('emptyCart') }}" onclick="return confirm('Apakah anda yakin ingin menghapus seluruh list?')" class="btn btn-danger mr-1">Hapus Semua</a>
-                        <button type="button" class="btn btn-primary w-24">Proses</button>
+                        <button type="button" id="proses_button" onclick="storeData()" class="btn btn-primary w-24">Proses</button>
                     </div>
                 </div>
             </div>
         </div>
     @endif
 </div>
+@endsection
+
+@section('js')
+<script>
+    async function storeData(){
+        const kode_penerimaan = document.querySelector('#kode_penerimaan').value;
+        const tanggal = document.querySelector('#tanggal').value;
+        const terima_dari = document.querySelector('#terima_dari').value;
+        const nama_pengirim = document.querySelector('#nama_pengirim').value;
+        const kirim_ke = document.querySelector('#kirim_ke').value;
+        const nama_penerima = document.querySelector('#nama_penerima').value;
+        const catatan = document.querySelector('#catatan').innerHTML;
+
+        console.log(tanggal);
+
+        const data = await fetch(`{{ route('api.obatMasukStoreData') }}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                kode_penerimaan: kode_penerimaan,
+                tanggal: tanggal,
+                terima_dari: terima_dari,
+                nama_pengirim: nama_pengirim,
+                kirim_ke: kirim_ke,
+                nama_penerima: nama_penerima,
+                catatan: catatan
+            })
+        })
+        .then(response => response.json())
+        .then(result => result)
+        .catch(error => console.error(error));
+
+        if (data.success == true) {
+            alert(data.message);
+            // window.location.href = `{{ route('obatmasukView') }}`;
+        } else {
+            alert(data.message);
+        }
+    }
+</script>
 @endsection
