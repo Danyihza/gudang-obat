@@ -19,7 +19,8 @@ class DetailTransaksiObat extends Model
      * @var string[]
      */
     protected $fillable = [
-        'no_batch', 
+        'no_batch',
+        'id_user',
         'kode_transaksi',
         'kode_obat',
         'nomor_faktur',

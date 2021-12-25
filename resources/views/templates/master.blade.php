@@ -115,8 +115,8 @@
                 <div class="dropdown-menu w-56">
                     <div class="dropdown-menu__content box bg-theme-26 dark:bg-dark-6 text-white">
                         <div class="p-4 border-b border-theme-27 dark:border-dark-3">
-                            <div class="font-medium">Johnny Depp</div>
-                            <div class="text-xs text-theme-28 mt-0.5 dark:text-gray-600">Backend Engineer</div>
+                            <div class="font-medium">{{ session('user')['name'] }}</div>
+                            <div class="text-xs text-theme-28 mt-0.5 dark:text-gray-600">{{ session('user')['username'] }}</div>
                         </div>
                         <div class="p-2">
                             <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="user" class="w-4 h-4 mr-2"></i> Profile </a>
@@ -144,6 +144,7 @@
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('/assets/dist/') }}/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js"></script>j
     <!-- END: JS Assets-->
     @yield('js')
 </body>

@@ -18,6 +18,7 @@ class CreateUserTable extends Migration
             $table->string('name', 100);
             $table->string('username', 100)->unique();
             $table->string('password');
+            $table->string('kode_puskesmas');
             $table->dateTime('last_login')->nullable();
             $table->timestamps();
         });

@@ -15,11 +15,13 @@ class CreateDetailTransaksiTable extends Migration
     {
         Schema::create('detail_transaksi', function (Blueprint $table) {
             $table->string('no_batch', 100)->primary();
+            $table->string('id_user', 36)->index();
+            $table->foreign('id_user')->references('id_user')->on('user')->onDelete('cascade');
             $table->string('kode_transaksi', 100)->index();
             $table->foreign('kode_transaksi')->references('kode_transaksi')->on('transaksi_obat')->onDelete('cascade');
             $table->string('kode_obat', 100)->index();
             $table->foreign('kode_obat')->references('kode_obat')->on('master_obat')->onDelete('cascade');
-            $table->string('nomor_faktur', 100)->unique();
+            $table->string('nomor_faktur', 100);
             $table->string('kadaluarsa', 100);
             $table->integer('harga');
             $table->integer('jumlah');

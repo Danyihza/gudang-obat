@@ -24,8 +24,18 @@ class TransaksiObat extends Model
         'nama_pengirim',
         'kirim_ke',
         'nama_penerima',
+        'tanggal',
+        'tipe_transaksi',
         'catatan'
     ];
+
+    public static function generateKodePenerimaan($kodePuskesmas = null)
+    {
+        $kode_transaksi = self::latest()->first()->kode_transaksi;
+        $kode_transaksi = explode('-', $kode_transaksi);
+        $kode_transaksi = (int) $kode_transaksi[2];
+        return $kode_transaksi;
+    }
 
     public function detailTransaksiObat()
     {

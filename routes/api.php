@@ -20,9 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::group(['as' => 'api.'], function () {
-//     Route::post('/obatmasuk/storeData', [ObatMasukController::class, 'storeData'])->name('obatMasukStoreData');
-// });
+Route::group(['as' => 'api.'], function () {
+    Route::get('/obatmasuk/checkNomorBatch', [ObatMasukController::class, 'checkNomorBatch'])->name('checkNomorBatch');
+});
 
 // Route::post('/testovo', [DashboardController::class, 'ovoConnect']);
 

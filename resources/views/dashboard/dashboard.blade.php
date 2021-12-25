@@ -21,14 +21,9 @@
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
-                                        <i data-feather="shopping-cart" class="report-box__icon text-theme-10"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer"
-                                                title="33% Higher than last month"> 33% <i data-feather="chevron-up"
-                                                    class="w-4 h-4 ml-0.5"></i> </div>
-                                        </div>
+                                        <img src="{{ asset('assets/icon') }}/stok.png" width="26px" alt="">
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">4.710</div>
+                                    <div class="text-3xl font-medium leading-8 mt-6">{{ $count['total_obat'] }}</div>
                                     <div class="text-base text-gray-600 mt-1">Total Obat</div>
                                 </div>
                             </div>
@@ -37,14 +32,9 @@
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
-                                        <i data-feather="credit-card" class="report-box__icon text-theme-11"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer"
-                                                title="2% Lower than last month"> 2% <i data-feather="chevron-down"
-                                                    class="w-4 h-4 ml-0.5"></i> </div>
-                                        </div>
+                                        <img src="{{ asset('assets/icon') }}/obat_masuk.png" width="26px" alt="">
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">3.721</div>
+                                    <div class="text-3xl font-medium leading-8 mt-6">{{ $count['total_obat_masuk'] }}</div>
                                     <div class="text-base text-gray-600 mt-1">Obat Masuk</div>
                                 </div>
                             </div>
@@ -53,12 +43,7 @@
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
-                                        <i data-feather="monitor" class="report-box__icon text-theme-12"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer"
-                                                title="12% Higher than last month"> 12% <i data-feather="chevron-up"
-                                                    class="w-4 h-4 ml-0.5"></i> </div>
-                                        </div>
+                                        <img src="{{ asset('assets/icon') }}/obat_keluar.png" width="26px" alt="">
                                     </div>
                                     <div class="text-3xl font-medium leading-8 mt-6">2.149</div>
                                     <div class="text-base text-gray-600 mt-1">Obat Keluar</div>
@@ -69,14 +54,9 @@
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
-                                        <i data-feather="user" class="report-box__icon text-theme-9"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer"
-                                                title="22% Higher than last month"> 22% <i data-feather="chevron-up"
-                                                    class="w-4 h-4 ml-0.5"></i> </div>
-                                        </div>
+                                        <img src="{{ asset('assets/icon') }}/expired.png" width="26px" alt="">
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">152.040</div>
+                                    <div class="text-3xl font-medium text-theme-6 leading-8 mt-6">{{ $count['total_obat_kedaluwarsa'] }}</div>
                                     <div class="text-base text-gray-600 mt-1">Obat Kedaluwarsa</div>
                                 </div>
                             </div>
@@ -351,10 +331,10 @@
                         <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
 </td>
 <td>
-    <a href="" class="font-medium whitespace-nowrap">{{ $data->nama_obat }}</a>
-    <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">{{$data->kode_satuan_kecil}}</div>
+    <a href="" class="font-medium whitespace-nowrap">{{ $data->obat->nama_obat }}</a>
+    <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">{{$data->obat->kode_satuan_kecil}}</div>
 </td>
-<td class="text-center">{{ $data->stok->where('id_user', session('user')['id_user'])->first()->stok ?? 0 }}</td>
+<td class="text-center">{{ $data->stok }}</td>
 <!-- <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Berlaku </div>
                     </td> -->

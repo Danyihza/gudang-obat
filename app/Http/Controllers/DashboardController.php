@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetailTransaksiObat;
+use App\Models\FkStok;
 use App\Models\MasterObat;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -22,7 +24,12 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $data['state'] = 'Dashboard';
-        $data['obat'] = MasterObat::all();
+        // $data['obat'] = MasterObat::all();
+        $data['obat'] = FkStok::where('id_user', session('user')['id_user'])->get();
+        $data['count']['total_obat'] = FkStok::where('id_user', session('user')['id_user'])->count();
+        $data['count']['total_obat_masuk'] = DetailTransaksiObat::where('id_user', session('user')['id_user'])->where('tipe_transaksi', 'masuk')->sum('jumlah');
+        $data['count']['total_obat_kedaluwarsa'] = DetailTransaksiObat::where('id_user', session('user')['id_user'])->where('tipe_transaksi', 'masuk')->where('kadaluarsa', '<=', date('Y-m'))->sum('jumlah');
+        // dd($data);
         return view('dashboard.dashboard', $data);
     }
 

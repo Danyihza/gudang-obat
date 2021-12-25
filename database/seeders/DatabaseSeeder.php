@@ -27,14 +27,15 @@ class DatabaseSeeder extends Seeder
         //     'password' => Hash::make('admin'),
         //     'last_login' => now(),
         // ]);
-        $id1 = gen_uuid();
-        $id2 = gen_uuid();
+        $id1 = '20e357ca-c1f3-497e-96fe-62ad216392e3';
+        $id2 = 'fed157c7-2f74-41b3-a549-8c0a835b4fd3';
         User::create([
             'id_user' => $id1,
             'name' => 'Puskesmas Tlanakan',
             'username' => 'tlanakan',
             'password' => Hash::make('tlanakan'),
             'last_login' => now(),
+            'kode_puskesmas' => 'P35281111',
         ]);
 
         User::create([
@@ -43,6 +44,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'galis',
             'password' => Hash::make('galis'),
             'last_login' => now(),
+            'kode_puskesmas' => 'P35282222',
         ]);
 
         MasterObat::create([
@@ -77,43 +79,69 @@ class DatabaseSeeder extends Seeder
             'id_user' => $id1,
             'stok' => '100',
         ]);
-
-        FkStok::create([
-            'kode_obat' => 'A02',
-            'id_user' => $id1,
-            'stok' => '10',
-        ]);
         
-        FkStok::create([
-            'kode_obat' => 'A03',
-            'id_user' => $id1,
-            'stok' => '50',
-        ]);
-
         FkStok::create([
             'kode_obat' => 'A02',
             'id_user' => $id2,
             'stok' => '50',
         ]);
 
+        // FkStok::create([
+        //     'kode_obat' => 'A02',
+        //     'id_user' => $id1,
+        //     'stok' => '10',
+        // ]);
+        
+        // FkStok::create([
+        //     'kode_obat' => 'A03',
+        //     'id_user' => $id1,
+        //     'stok' => '50',
+        // ]);
+
+
         TransaksiObat::create([
-            'kode_transaksi' => 'TRS-001',
+            'kode_transaksi' => 'OM-P35281111-00001',
             'terima_dari' => 'RS. Dr. A.S.M.M.S',
             'nama_pengirim' => 'Dr. A.S.M.M.S',
             'kirim_ke' => 'RS. Dr. A.S.M.M.S',
             'nama_penerima' => 'Dr. A.S.M.M.S',
             'catatan' => 'Catatan',
+            'tipe_transaksi' => 'masuk',
+            'tanggal' => date('Y-m-d')
+        ]);
+
+        TransaksiObat::create([
+            'kode_transaksi' => 'OM-P35282222-00001',
+            'terima_dari' => 'RS. Dr. A.S.M.M.S',
+            'nama_pengirim' => 'Dr. A.S.M.M.S',
+            'kirim_ke' => 'RS. Dr. A.S.M.M.S',
+            'nama_penerima' => 'Dr. A.S.M.M.S',
+            'catatan' => 'Catatan',
+            'tipe_transaksi' => 'masuk',
             'tanggal' => date('Y-m-d')
         ]);
 
         DetailTransaksiObat::create([
             'no_batch' => 'B01',
-            'kode_transaksi' => 'TRS-001',
+            'id_user' => $id1,
+            'kode_transaksi' => 'OM-P35281111-00001',
             'kode_obat' => 'A01',
             'nomor_faktur' => 'F01',
             'kadaluarsa' => '2020-01-01',
             'harga' => '10000',
-            'jumlah' => '10',
+            'jumlah' => '100',
+            'tipe_transaksi' => 'masuk'
+        ]);
+
+        DetailTransaksiObat::create([
+            'no_batch' => 'B02',
+            'id_user' => $id2,
+            'kode_transaksi' => 'OM-P35282222-00001',
+            'kode_obat' => 'A01',
+            'nomor_faktur' => 'F02',
+            'kadaluarsa' => '2020-01-01',
+            'harga' => '10000',
+            'jumlah' => '50',
             'tipe_transaksi' => 'masuk'
         ]);
 
